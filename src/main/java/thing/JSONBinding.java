@@ -23,7 +23,7 @@ public class JSONBinding implements Binding<Object, JsonElement> {
         // Depending on how you generate your SQL, you may need to explicitly distinguish
         // between jOOQ generating bind variables or inlined literals. If so, use this check:
         // ctx.render().paramType() == INLINED
-        ctx.render().visit(DSL.val(ctx.convert(converter()).value())).sql("::json");
+        ctx.render().visit(DSL.val(ctx.convert(converter()).value())).sql(":: jsonb");
     }
 
     // Registering VARCHAR types for JDBC CallableStatement OUT parameters

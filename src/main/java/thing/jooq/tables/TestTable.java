@@ -14,7 +14,7 @@ import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.impl.TableImpl;
 
-import thing.JSONConverter;
+import thing.JSONBinding;
 import thing.jooq.Public;
 import thing.jooq.tables.records.TestTableRecord;
 
@@ -32,7 +32,7 @@ import thing.jooq.tables.records.TestTableRecord;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TestTable extends TableImpl<TestTableRecord> {
 
-    private static final long serialVersionUID = 113705971;
+    private static final long serialVersionUID = 2121954579;
 
     /**
      * The reference instance of <code>public.test_table</code>
@@ -50,7 +50,7 @@ public class TestTable extends TableImpl<TestTableRecord> {
     /**
      * The column <code>public.test_table.json_column</code>.
      */
-    public final TableField<TestTableRecord, JsonElement> JSON_COLUMN = createField("json_column", org.jooq.impl.DefaultDataType.getDefaultDataType("jsonb"), this, "", new JSONConverter());
+    public final TableField<TestTableRecord, JsonElement> JSON_COLUMN = createField("json_column", org.jooq.impl.DefaultDataType.getDefaultDataType("jsonb"), this, "", new JSONBinding());
 
     /**
      * Create a <code>public.test_table</code> table reference
