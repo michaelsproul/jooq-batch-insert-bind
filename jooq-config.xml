@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.8.0.xsd">
+  <jdbc>
+    <driver>org.postgresql.Driver</driver>
+    <url>jdbc:postgresql://localhost:5432/test_user</url>
+    <user>test_user</user>
+    <password>password</password>
+  </jdbc>
+
+  <generator>
+    <name>org.jooq.util.JavaGenerator</name>
+
+    <database>
+      <name>org.jooq.util.postgres.PostgresDatabase</name>
+      <inputSchema>public</inputSchema>
+
+      <customTypes>
+        <customType>
+          <name>JSON</name>
+          <type>com.google.gson.JsonElement</type>
+          <converter>thing.JSONConverter</converter>
+        </customType>
+      </customTypes>
+
+      <forcedTypes>
+        <forcedType>
+          <name>JSON</name>
+          <binding>thing.JSONBinding</binding>
+          <expression>.*</expression>
+          <types>.*JSON.*</types>
+        </forcedType>
+      </forcedTypes>
+    </database>
+
+    <generate>
+      <relations>true</relations>
+      <deprecated>false</deprecated>
+      <records>true</records>
+      <immutablePojos>true</immutablePojos>
+      <fluentSetters>true</fluentSetters>
+    </generate>
+
+    <target>
+      <packageName>thing.jooq</packageName>
+      <encoding>UTF-8</encoding>
+      <directory>src/main/java/</directory>
+    </target>
+  </generator>
+</configuration>
