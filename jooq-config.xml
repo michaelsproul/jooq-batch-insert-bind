@@ -18,14 +18,13 @@
         <customType>
           <name>JSON</name>
           <type>com.google.gson.JsonElement</type>
-          <converter>thing.JSONConverter</converter>
+          <binding>thing.JSONBinding</binding>
         </customType>
       </customTypes>
 
       <forcedTypes>
         <forcedType>
           <name>JSON</name>
-          <binding>thing.JSONBinding</binding>
           <expression>.*</expression>
           <types>.*JSON.*</types>
         </forcedType>
