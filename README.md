@@ -30,3 +30,9 @@ Caused by: java.sql.BatchUpdateException: Batch entry 0 insert into "public"."te
         at org.jooq.impl.BatchSingle.executePrepared(BatchSingle.java:239)
         ... 4 more
 ```
+
+You can also regenerate the jOOQ code with:
+
+```
+$ gradle jooq
+```
